@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{% block title %}Bienvenido{% endblock %}</title>
+        {% block stylesheets %}           
+           {% stylesheets 
+                'bundles/app/css/bootstrap.min.css'                                                                                
+                'bundles/app/css/_all-skins.min.css'                               
+                'bundles/app/css/AdminLTE.min.css' 
+                'bundles/app/css/font-awesome.min.css'                                
+                'bundles/app/css/bootstrap.min.css.map'   
+                'bundles/app/css/dataTables.bootstrap.min.css'
+                'bundles/app/css/bootstrap3-wysihtml5.min.css'
+                'bundles/app/css/editor_gecko.css'                
+                'bundles/app/css/custom.css'
+                filter='cssrewrite' 
+           %}
+                <link rel="stylesheet" href="{{ asset_url }}" />
+           {% endstylesheets %}
+        
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+        <div class="wrapper">
+                                    
+            {% block header %}
+                
+            {% endblock %}
+            {% block menu_lateral %}
+                
+            {% endblock %}
+            
+            {% block body %}                                                           
+            {% endblock %}
+                                                            
+            {% block sidebar %}
+                
+            {% endblock %}
+            
+            {% block footer %}
+               
+            {% endblock %}
+            
+            {% block javascripts %}
+                {% javascripts                          
+                    'bundles/app/js/jquery-2.2.3.min.js'                 
+                    'bundles/app/js/jquery-ui.min.js'
+                    'bundles/app/js/bootstrap.min.js'
+                    'bundles/app/js/app.min.js'                                                            
+                    'bundles/app/js/jquery.dataTables.min.js'     
+                    'bundles/app/js/dataTables.jqueryui.min.js'     
+                    'bundles/app/js/dataTables.bootstrap.min.js'                                        
+                    'bundles/app/js/ajaxHandler.js'
+                    'bundles/app/js/custom.js'                                     
+                %}
+                    <script src="{{ asset_url }}"></script>                    
+                {% endjavascripts %}
+               <!-- <script src="{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+                <script src="{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script> -->
+            {% endblock %}
+            
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,356 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14-jul-2014, 13:58:06
+    Author     : J_Rikrdo
+*/
+
+body
+{
+    color: #666 !important;
+}
+
+#page-wrapper
+{
+/*    background-color: #e8e8e8;*/
+}
+
+.page-logo img
+{
+    width: 100%;
+    height: 600px;
+    opacity: 0.8;
+    filter: alpha(opacity=80); /* For IE8 and earlier */
+}
+
+#page-logo-login img
+{
+   margin: 5% auto -5% auto;
+}
+
+#page-logo-certificados img
+{
+   margin: 5% auto -10% auto;
+}
+
+.panel-heading
+{
+    color: #666 !important;
+/*    font-weight: 700;
+    overflow: hidden;
+    position: relative;
+    height: 57px;
+    padding: 10px 20px 9px;
+    border-bottom: 1px solid #c9c9c9;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 33px;
+    border-radius: 3px 3px 0 0;
+    text-shadow: 0 1px #ffffff;
+    border-color: #cccccc rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.18);
+    background-color: #f0f0f0;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff',endColorstr='#00ffffff',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);*/
+}
+
+.logo-menu
+{
+    padding: 0;
+    margin: -5% auto 0 auto;
+}
+
+.logo-menu a img
+{
+    max-width: 55%;
+}
+
+.periodo-actual
+{
+    padding: 5% 4%;
+    border-bottom: 1px solid #E7E7E7;
+    text-align: center;
+    font-size: .85em;
+}
+
+.periodo-actual span
+{
+    font-weight: bold;
+}
+
+.panel-title-sm
+{
+    padding-right: 5px;
+    color: #888;
+    font-size: 12px;
+    font-weight: 700;
+    text-shadow: 0 1px #ffffff;
+}
+
+.modal-dialog-sm 
+{
+    width: 425px;
+}
+
+.modal-dialog-md
+{
+    width: 550px;
+}
+
+.modal-dialog-lg
+{
+    width: 725px;
+}
+
+.modal-dialog-exlg
+{
+    width: 1070px;
+}
+
+.navbar-logo
+{
+    max-width: 125px;
+    float: left;
+}
+
+.font-small
+{
+    font-size: .75em;
+}
+
+.dropzone {
+  min-height: 405px; }
+
+.dropzone .dz-default.dz-message
+{
+    background-image: none;
+    width: 100%;
+    height: 100%;
+    top: 23%;
+    margin-left: 0px;
+    margin-top: -23px;
+    text-align: center;
+    left: 0; 
+}
+
+.dropzone .dz-default.dz-message span
+{
+    display: inline-block;
+    text-align: center;
+}
+
+.dropzone .dz-default.dz-message span.main-text
+{
+    font-size: 28px;
+    font-weight: 400;
+    color: #666;
+}
+
+.dropzone .dz-default.dz-message span.main-text b
+{
+    font-size: 40px;
+    color: #444;
+}
+
+.dropzone .dz-default.dz-message span.sub-text
+{
+    font-size: 20px;
+    color: #888; 
+}
+
+.dropzone .dz-default.dz-message i.fa
+{
+    font-size: 100px;
+    display: block;
+    color: #428bca;
+    margin-bottom: 15px; 
+}
+
+.dropzone a.dz-remove,
+.dropzone-previews a.dz-remove
+{
+    cursor: pointer;
+    color: #fff;
+    background-image: -webkit-linear-gradient(top,#428bca 0,#2d6ca2 100%);
+    background-image: -o-linear-gradient(top,#428bca 0,#2d6ca2 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#428bca),to(#2d6ca2));
+    background-image: linear-gradient(to bottom,#428bca 0,#2d6ca2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.dropzone a.dz-remove:hover,
+.dropzone-previews a.dz-remove:hover
+{
+    color: #fff;
+    background-image: -webkit-linear-gradient(top,#2d6ca2 0,#428bca 100%);
+    background-image: -o-linear-gradient(top,#2d6ca2 0,#428bca 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#2d6ca2),to(#428bca));
+    background-image: linear-gradient(to bottom,#2d6ca2 0,#428bca 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+.btn-blue
+{
+    background-color: #5bc0de;
+}
+
+.title-table
+{
+    background-color: #f9f9f9;
+}
+
+.valing-td
+{
+    vertical-align: middle !important;
+}
+
+/* Single Select List */
+.chosen-container-single .chosen-single {
+  border-color: #c9c9c9;
+  box-shadow: none;
+  height: 35px;
+  line-height: 32px; }
+
+.chosen-container-single .chosen-drop {
+  padding: 5px; }
+
+/* Multi Select List */
+.chosen-container-multi .chosen-choices {
+  cursor: pointer;
+  border-radius: 4px;
+  border-color: #c9c9c9;
+  background-clip: padding-box;
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(top, white 1%, #f0f0f0 100%);
+  background-image: linear-gradient(to bottom, #ffffff 1%, #f0f0f0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
+
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  cursor: pointer;
+  height: 30px;  
+}
+
+.chosen-container-multi.chosen-container-active .chosen-choices {
+  box-shadow: none;
+  background-repeat: repeat-x;
+  background-clip: padding-box;
+  background-image: -webkit-linear-gradient(top, #eeeeee 1%, white 100%);
+  background-image: linear-gradient(to bottom, #eeeeee 1%, #ffffff 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#ffffff',GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false); }
+
+.chosen-container-multi.chosen-container-active .chosen-drop {
+  padding: 8px 5px;
+  -webkit-box-shadow: 0 0 8px blue;
+  box-shadow: 0 0 8px blue; }
+
+.form-group button
+{
+    margin-bottom: 1%;
+}
+
+.panel-sercop
+{
+    border-color: #282456;
+}
+
+.panel-sercop>.panel-heading
+{
+    color: #fff !important;
+    background-color: #282456;
+    border-color: #282456;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #535077), color-stop(100%, #282456));
+    background: -webkit-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -moz-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -ms-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -o-linear-gradient(top, #535077 0%, #282456 100%);
+    background: linear-gradient(to bottom, #535077 0%, #282456 100%);
+}
+
+.btn-sercop
+{
+    color: #fff !important;
+    background-color: #282456;
+    border-color: #282456;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #535077), color-stop(100%, #282456));
+    background: -webkit-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -moz-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -ms-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -o-linear-gradient(top, #535077 0%, #282456 100%);
+    background: linear-gradient(to bottom, #535077 0%, #282456 100%);
+}
+
+.btn-sercop:hover,
+.btn-sercop:focus,
+.btn-sercop:active,
+.btn-sercop.active,
+.open .dropdown-toggle.btn-sercop
+{
+  color: #fff;
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+
+.certificados-title
+{
+    color: #fff !important;
+    font-weight: bold;
+}
+
+.bck-sercop
+{
+    background-color: #282456;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #535077), color-stop(100%, #282456));
+    background: -webkit-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -moz-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -ms-linear-gradient(top, #535077 0%, #282456 100%);
+    background: -o-linear-gradient(top, #535077 0%, #282456 100%);
+    background: linear-gradient(to bottom, #535077 0%, #282456 100%);
+    color: #fff !important;
+}
+
+.bck-sercop-lite
+{
+    background-color: #fff;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #dcdcdc));
+    background: -webkit-linear-gradient(top, #fff 0%, #dcdcdc 100%);
+    background: -moz-linear-gradient(top, #fff 0%, #dcdcdc 100%);
+    background: -ms-linear-gradient(top, #fff 0%, #dcdcdc 100%);
+    background: -o-linear-gradient(top, #fff 0%, #dcdcdc 100%);
+    background: linear-gradient(to bottom, #fff 0%, #dcdcdc 100%);
+    border: 1px solid #cacaca;
+}
+
+.logo-certificados
+{
+    position: absolute;
+    top: -5%;
+    left: 80%;
+}
+
+.logo-certificados img
+{
+    max-width: 70%
+}
+
+.margin-left
+{
+    margin-left: 10%;
+}
+
+.margin-right
+{
+    margin-right: 5%;
+}
+
+.margin-top
+{
+    margin-top: 5%;
+}

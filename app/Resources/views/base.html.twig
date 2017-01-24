@@ -1,13 +1,42 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
-</html>
+{% extends "layout.html.twig" %}
+
+{% block header %}
+    {% include 'theme/header.html.twig' %}    
+{% endblock %}
+{% block menu_lateral %}
+    {% include 'theme/menu_lateral.html.twig' %}
+{% endblock %}
+
+{% block body %}
+            
+   <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <h1>
+                
+                
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="container">
+                {% block contenido %}
+                {% endblock %}
+            </div>
+        </section>
+    </div>
+               
+{% endblock %}
+{% block sidebar %}
+    {% include 'theme/sidebar.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.1
+        </div>
+        <strong>Copyright &copy; 2016 Todos los derechos reservados.
+    </footer>
+
+{% endblock %}

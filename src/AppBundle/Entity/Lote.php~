@@ -1,0 +1,72 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Lote
+ *
+ * @ORM\Table(name="lote", indexes={@ORM\Index(name="IDX_65B4329FFCF8192D", columns={"id_usuario"})})
+ * @ORM\Entity
+ */
+class Lote
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="lote_id_seq", allocationSize=1, initialValue=1)
+     */
+    private $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id_proyecto", type="integer", nullable=false)
+     */
+    private $idProyecto;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_lote", type="string", length=200, nullable=true)
+     */
+    private $nombreLote;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="medidas", type="string", length=100, nullable=true)
+     */
+    private $medidas;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text", nullable=true)
+     */
+    private $descripcion;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_registro", type="datetime", nullable=true)
+     */
+    private $fechaRegistro = 'now()';
+
+    /**
+     * @var \Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     * })
+     */
+    private $idUsuario;
+
+
+}
+

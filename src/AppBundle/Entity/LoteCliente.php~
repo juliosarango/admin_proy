@@ -1,0 +1,85 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * LoteCliente
+ *
+ * @ORM\Table(name="lote_cliente", indexes={@ORM\Index(name="IDX_9981C120EE942E9D", columns={"id_lote"}), @ORM\Index(name="IDX_9981C1202A813255", columns={"id_cliente"}), @ORM\Index(name="IDX_9981C120FCF8192D", columns={"id_usuario"})})
+ * @ORM\Entity
+ */
+class LoteCliente
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="SEQUENCE")
+     * @ORM\SequenceGenerator(sequenceName="lote_cliente_id_seq", allocationSize=1, initialValue=1)
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="precio", type="decimal", precision=10, scale=3, nullable=true)
+     */
+    private $precio;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_venta", type="datetime", nullable=true)
+     */
+    private $fechaVenta;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descripcion", type="text", nullable=true)
+     */
+    private $descripcion;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fecha_registro", type="datetime", nullable=true)
+     */
+    private $fechaRegistro = 'now()';
+
+    /**
+     * @var \Lote
+     *
+     * @ORM\ManyToOne(targetEntity="Lote")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_lote", referencedColumnName="id")
+     * })
+     */
+    private $idLote;
+
+    /**
+     * @var \Cliente
+     *
+     * @ORM\ManyToOne(targetEntity="Cliente")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_cliente", referencedColumnName="id")
+     * })
+     */
+    private $idCliente;
+
+    /**
+     * @var \Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     * })
+     */
+    private $idUsuario;
+
+
+}
+
