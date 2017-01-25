@@ -9,7 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class ProyectoType extends AbstractType
-{
+{            
     /**
      * {@inheritdoc}
      */
@@ -17,8 +17,7 @@ class ProyectoType extends AbstractType
     {
         $builder->add('nombre',  TextType::class, array("label"=>"Nombre del Proyecto","attr"=>array("class"=>"form-control","placeholder"=>"Nombre del Proyecto")))
                 ->add('lugar', TextType::class, array("label"=>"Lugar del Proyecto","attr"=>array("class"=>"form-control","placeholder"=>"Lugar del Proyecto")))
-                ->add('descripcion', TextareaType::class, array("label"=>"Descripción","attr"=>array("class"=>"form-control","placeholder"=>"Descripción del Proyecto")));
-        $builder->addEventListener($eventName, $listener);
+                ->add('descripcion', TextareaType::class, array("label"=>"Descripción","attr"=>array("class"=>"form-control","placeholder"=>"Descripción del Proyecto")));               
     }
     
     /**

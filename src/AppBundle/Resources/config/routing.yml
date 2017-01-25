@@ -5,4 +5,8 @@ app_default:
 app_proyecto:
     resource: "@AppBundle/Resources/config/routing/proyecto.yml"
     prefix:   /proyecto
+    
+app_proyecto_lote:
+    resource: "@AppBundle/Resources/config/routing/lote.yml"
+    prefix: /proyecto/{pId}/lote
 

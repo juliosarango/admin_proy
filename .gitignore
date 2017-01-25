@@ -4,6 +4,10 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
+#netbeans
+/nbproject
+/nbproject/*
+
 # Email spool folder
 /app/spool/*
 

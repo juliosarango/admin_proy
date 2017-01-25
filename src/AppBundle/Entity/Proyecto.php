@@ -48,20 +48,23 @@ class Proyecto
      *
      * @ORM\Column(name="fecha_registro", type="datetime", nullable=true)
      */
-    private $fechaRegistro = 'now()';
+    private $fechaRegistro;
 
     /**
      * @var \Usuario
      *
      * @ORM\ManyToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id",nullable=false)
      * })
      */
     private $idUsuario;
+    
+    public function __construct() {
+        $this->fechaRegistro = new \DateTime('now');
+    }
 
-
-
+    
     /**
      * Get id
      *

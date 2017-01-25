@@ -3,43 +3,29 @@
 {% block contenido %}
     <h1>Proyectos list</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
+            <tr>               
                 <th>Nombre</th>
                 <th>Lugar</th>
-                <th>Descripcion</th>
-                <th>Fecharegistro</th>
+                <th>Descripcion</th>                
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for proyecto in proyectos %}
-            <tr>
-                <td><a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}">{{ proyecto.id }}</a></td>
+            <tr>                
                 <td>{{ proyecto.nombre }}</td>
                 <td>{{ proyecto.lugar }}</td>
-                <td>{{ proyecto.descripcion }}</td>
-                <td>{% if proyecto.fechaRegistro %}{{ proyecto.fechaRegistro|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('proyecto_edit', { 'id': proyecto.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                <td>{{ proyecto.descripcion }}</td>                
+                <td>                    
+                    <a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa fa-eye"></i>&nbsp;</a>                        
+                    <a href="{{ path('proyecto_edit', { 'id': proyecto.id }) }}" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil"></i>&nbsp;</a>                        
                 </td>
             </tr>
         {% endfor %}
         </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('proyecto_new') }}">Create a new proyecto</a>
-        </li>
-    </ul>
+    </table>    
+    
+        <a href="{{ path('proyecto_new') }}" class="btn btn-success"><i class="fa fa-plus-square"></i>&nbsp;Crear nuevo proyecto</a>       
 {% endblock %}

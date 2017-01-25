@@ -76,7 +76,7 @@ class Cliente
      *
      * @ORM\ManyToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id",nullable=false)
      * })
      */
     private $idUsuario;

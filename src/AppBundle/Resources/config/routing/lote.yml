@@ -1,0 +1,24 @@
+proyecto_lote_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Lote:index" }
+    methods:  GET
+
+proyecto_lote_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Lote:show" }
+    methods:  GET
+
+proyecto_lote_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Lote:new" }
+    methods:  [GET, POST]
+
+proyecto_lote_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Lote:edit" }
+    methods:  [GET, POST]
+
+proyecto_lote_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Lote:delete" }
+    methods:  DELETE

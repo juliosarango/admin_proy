@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+    <h1>Lotes list</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>                                
+                <th>Nombrelote</th>
+                <th>Medidas</th>
+                <th>Descripcion</th>
+                <th>Fecharegistro</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lote in lotes %}
+            <tr>                                
+                <td>{{ lote.nombreLote }}</td>
+                <td>{{ lote.medidas }}</td>
+                <td>{{ lote.descripcion }}</td>
+                <td>{% if lote.fechaRegistro %}{{ lote.fechaRegistro|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('proyecto_lote_show', {'pId':pId.id, 'id': lote.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('proyecto_lote_edit', {'pId':pId.id, 'id': lote.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('proyecto_lote_new',{'pId':pId.id}) }}">Create a new lote</a>
+        </li>
+    </ul>
+{% endblock %}

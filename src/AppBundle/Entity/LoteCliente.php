@@ -55,7 +55,7 @@ class LoteCliente
      *
      * @ORM\ManyToOne(targetEntity="Lote")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_lote", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_lote", referencedColumnName="id",nullable=false)
      * })
      */
     private $idLote;
@@ -65,7 +65,7 @@ class LoteCliente
      *
      * @ORM\ManyToOne(targetEntity="Cliente")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_cliente", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_cliente", referencedColumnName="id",nullable=false)
      * })
      */
     private $idCliente;
@@ -75,7 +75,7 @@ class LoteCliente
      *
      * @ORM\ManyToOne(targetEntity="Usuario")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_usuario", referencedColumnName="id",nullable=false)
      * })
      */
     private $idUsuario;

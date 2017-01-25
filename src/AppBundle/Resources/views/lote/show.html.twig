@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+    <h1>Lote</h1>
+
+    <table>
+        <tbody>            
+            <tr>
+                <th>Nombrelote</th>
+                <td>{{ lote.nombreLote }}</td>
+            </tr>
+            <tr>
+                <th>Medidas</th>
+                <td>{{ lote.medidas }}</td>
+            </tr>
+            <tr>
+                <th>Descripcion</th>
+                <td>{{ lote.descripcion }}</td>
+            </tr>
+            <tr>
+                <th>Fecharegistro</th>
+                <td>{% if lote.fechaRegistro %}{{ lote.fechaRegistro|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('proyecto_lote_index',{'pId':pId.id}) }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('proyecto_lote_edit', {'pId':pId.id, 'id': lote.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
