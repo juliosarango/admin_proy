@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Proyecto;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Proyecto controller.
@@ -120,5 +121,12 @@ class ProyectoController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+    
+    public function iniciarAction(Proyecto $proyecto)
+    {
+        $session = new Session();
+        $session->set('proyecto', $proyecto);
+        return $this->render("AppBundle:proyecto:inicio.html.twig");
     }
 }

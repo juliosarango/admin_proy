@@ -1,31 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block contenido %}
-    <h1>Proyectos list</h1>
+    <h1>Proyectos</h1>
 
-    <table class="table table-striped">
-        <thead>
-            <tr>               
-                <th>Nombre</th>
-                <th>Lugar</th>
-                <th>Descripcion</th>                
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="row">
         {% for proyecto in proyectos %}
-            <tr>                
-                <td>{{ proyecto.nombre }}</td>
-                <td>{{ proyecto.lugar }}</td>
-                <td>{{ proyecto.descripcion }}</td>                
-                <td>                    
-                    <a href="{{ path('proyecto_show', { 'id': proyecto.id }) }}" data-toggle="tooltip" data-placement="top" title="Ver"><i class="fa fa-eye"></i>&nbsp;</a>                        
-                    <a href="{{ path('proyecto_edit', { 'id': proyecto.id }) }}" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fa fa-pencil"></i>&nbsp;</a>                        
-                </td>
-            </tr>
+            
+            
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">                        
+                        <div class="caption">
+                            <h3>{{proyecto.nombre}}</h3>
+                            <p>
+                                <i class="fa fa-quote-left fa-pull-left fa-border" aria-hidden="true"></i>
+                                {{proyecto.descripcion}}</p>
+                            <p>                                
+                                <a href="{{ path('proyecto_iniciar', { 'id': proyecto.id }) }}" class="btn btn-primary"><i class="fa fa-check-square"></i>&nbsp;Ingresar</a>                        
+                                <a href="{{ path('proyecto_edit', { 'id': proyecto.id }) }}" class="btn btn-default"><i class="fa fa-pencil"></i>&nbsp;Editar</a>                        
+                            </p>
+                        </div>
+                    </div>
+                </div>                                                            
         {% endfor %}
-        </tbody>
-    </table>    
-    
+    </div>
         <a href="{{ path('proyecto_new') }}" class="btn btn-success"><i class="fa fa-plus-square"></i>&nbsp;Crear nuevo proyecto</a>       
 {% endblock %}

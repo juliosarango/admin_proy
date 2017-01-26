@@ -2,6 +2,11 @@ proyecto_index:
     path:     /
     defaults: { _controller: "AppBundle:Proyecto:index" }
     methods:  GET
+    
+proyecto_iniciar:
+    path:     /{id}/iniciar
+    defaults: { _controller: "AppBundle:Proyecto:iniciar" }
+    methods:  GET    
 
 proyecto_show:
     path:     /{id}/show

@@ -1,0 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block contenido %}
+    {% set proy =  app.session.get('proyecto')%}
+            
+    Proyecto: {{proy.nombre}}
+{% endblock %}

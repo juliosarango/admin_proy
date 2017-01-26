@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block contenido %}
     <h1>Lote edit</h1>
 
     {{ form_start(edit_form) }}
@@ -10,7 +10,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('proyecto_lote_index') }}">Back to the list</a>
+            <a href="{{ path('proyecto_lote_index',{'pId':pId.id}) }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

@@ -6,6 +6,7 @@ use AppBundle\Entity\Lote;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Proyecto;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Lote controller.
@@ -19,9 +20,14 @@ class LoteController extends Controller
      */
     public function indexAction(Proyecto $pId)
     {        
+        
+        $session = new Session();        
+        $session->set("proyecto", $pId);
+        
         $em = $this->getDoctrine()->getManager();
 
-        $lotes = $em->getRepository('AppBundle:Lote')->findAll();
+        $lotes = $em->getRepository('AppBundle:Lote')->findBy(array('idProyecto' => $pId));
+        
 
         return $this->render('AppBundle:lote:index.html.twig', array(
             'lotes' => $lotes,
@@ -34,14 +40,14 @@ class LoteController extends Controller
      *
      */
     public function newAction(Proyecto $pId,Request $request)
-    {
+    {                        
         $lote = new Lote();
         $form = $this->createForm('AppBundle\Form\LoteType', $lote);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();             
-            $lote->setIdProyecto($pId);                        
+            $lote->setIdProyecto($pId);
             $em->persist($lote);
             $em->flush($lote);
 
@@ -74,9 +80,9 @@ class LoteController extends Controller
      * Displays a form to edit an existing lote entity.
      *
      */
-    public function editAction(Request $request, Lote $lote)
+    public function editAction(Request $request,Proyecto $pId, Lote $lote)
     {
-        $deleteForm = $this->createDeleteForm($lote);
+        $deleteForm = $this->createDeleteForm($pId,$lote);
         $editForm = $this->createForm('AppBundle\Form\LoteType', $lote);
         $editForm->handleRequest($request);
 
@@ -88,6 +94,7 @@ class LoteController extends Controller
 
         return $this->render('AppBundle:lote:edit.html.twig', array(
             'lote' => $lote,
+            'pId' => $pId,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));

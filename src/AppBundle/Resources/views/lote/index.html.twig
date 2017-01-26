@@ -5,8 +5,9 @@
 
     <table class="table table-striped">
         <thead>
-            <tr>                                
-                <th>Nombrelote</th>
+            <tr>
+                <th>No.</th>
+                <th>Lote</th>
                 <th>Medidas</th>
                 <th>Descripcion</th>
                 <th>Fecharegistro</th>
@@ -14,8 +15,10 @@
             </tr>
         </thead>
         <tbody>
+        {% set num = 1 %}
         {% for lote in lotes %}
-            <tr>                                
+            <tr>
+                <td>{{num}}</td>               
                 <td>{{ lote.nombreLote }}</td>
                 <td>{{ lote.medidas }}</td>
                 <td>{{ lote.descripcion }}</td>
@@ -31,6 +34,7 @@
                     </ul>
                 </td>
             </tr>
+            {% set num = num + 1%}
         {% endfor %}
         </tbody>
     </table>
