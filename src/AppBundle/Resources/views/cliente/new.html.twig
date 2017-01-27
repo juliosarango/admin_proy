@@ -1,16 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block contenido %}
-    
     <div class="col-md-8">
-        <h1>Registro de Lotes</h1>
+        <h1>Registro de Clientes</h1>
 
         {{ form_start(form) }}
             {{ form_widget(form) }}
             <br/>
             <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>&nbsp;Guardar</button>
-            <a href="{{ path('proyecto_lote_index',{'pId':pId.id}) }}" class="btn btn-success">&nbsp;Regresar</a>
-        {{ form_end(form) }}
-
+            <a href="{{ path('cliente_index')}}" class="btn btn-success"><i class="fa fa-list"></i>&nbsp;Regresar</a>
+        {{ form_end(form) }}       
     </div>
 {% endblock %}

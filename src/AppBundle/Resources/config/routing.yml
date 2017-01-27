@@ -6,6 +6,10 @@ app_proyecto:
     resource: "@AppBundle/Resources/config/routing/proyecto.yml"
     prefix:   /proyecto
     
+app_cliente:
+    resource: "@AppBundle/Resources/config/routing/cliente.yml"
+    prefix:   /cliente
+    
 app_proyecto_lote:
     resource: "@AppBundle/Resources/config/routing/lote.yml"
     prefix: /proyecto/{pId}/lote

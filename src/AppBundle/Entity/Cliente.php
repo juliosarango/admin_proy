@@ -69,7 +69,7 @@ class Cliente
      *
      * @ORM\Column(name="fecha_registro", type="datetime", nullable=true)
      */
-    private $fechaRegistro = 'now()';
+    private $fechaRegistro;
 
     /**
      * @var \Usuario
@@ -80,9 +80,12 @@ class Cliente
      * })
      */
     private $idUsuario;
+    
+    public function __construct() {
+        $this->fechaRegistro = new \DateTime('now');
+    }
 
-
-
+    
     /**
      * Get id
      *

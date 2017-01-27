@@ -12,9 +12,10 @@
    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                
-                
+            {% set proy =  app.session.get('proyecto')%}
+            {% if proy != null %}                    
+                <h3><b>Proyecto:</b> {{proy.nombre}}</h3>                                   
+            {% endif %}
         </section>
 
         <!-- Main content -->
