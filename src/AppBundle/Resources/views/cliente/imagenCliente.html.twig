@@ -1,0 +1,31 @@
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <i class="fa fa-cloud-upload"></i>&nbsp;&nbsp;
+        Subir una imagen
+    </div>
+    <div class="panel-body">
+        <div class="alert alert-info alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            Para subir sus archivos tenga en cuenta las siguientes indicaciones:
+            <ul>
+                <li>El archivo debe ser una imagen</li>
+                <li>El tamaño del archivo no puede ser mayor de 2Mb.</li>
+            </ul>
+        </div>
+        <form action="{{ oneup_uploader_endpoint('imagen_cliente') }}" class="dropzone" id="dropzone">  
+            <input type="hidden" name="id" value="{{id}}"/>
+            <div class="dz-default dz-message">
+                <span>
+                    <i class="fa fa-cloud-upload"></i>
+
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+        
+              
+
+
+

@@ -1,14 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
+{% block contenido %}
     <h1>Cliente</h1>
 
     <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ cliente.id }}</td>
-            </tr>
+        <tbody>            
             <tr>
                 <th>Cedula</th>
                 <td>{{ cliente.cedula }}</td>
@@ -32,11 +28,7 @@
             <tr>
                 <th>Descripcion</th>
                 <td>{{ cliente.descripcion }}</td>
-            </tr>
-            <tr>
-                <th>Fecharegistro</th>
-                <td>{% if cliente.fechaRegistro %}{{ cliente.fechaRegistro|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
+            </tr>            
         </tbody>
     </table>
 

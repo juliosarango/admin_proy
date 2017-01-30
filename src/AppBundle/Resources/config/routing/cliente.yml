@@ -22,3 +22,8 @@ cliente_delete:
     path:     /{id}/delete
     defaults: { _controller: "AppBundle:Cliente:delete" }
     methods:  DELETE
+    
+imagen_cliente:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Cliente:edit" }
+    methods:  [GET, POST]    

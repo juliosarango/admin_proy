@@ -25,6 +25,13 @@ class Cliente
     /**
      * @var string
      *
+     * @ORM\Column(name="imagen", type="string", length=20, nullable=true)
+     */
+    private $imagen;
+    
+    /**
+     * @var string
+     *
      * @ORM\Column(name="cedula", type="string", length=20, nullable=true)
      */
     private $cedula;
@@ -287,4 +294,14 @@ class Cliente
     {
         return $this->idUsuario;
     }
+    
+    function getImagen() {
+        return $this->imagen;
+    }
+
+    function setImagen($imagen) {
+        $this->imagen = $imagen;
+    }
+
+
 }

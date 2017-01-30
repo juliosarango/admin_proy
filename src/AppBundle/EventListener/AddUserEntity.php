@@ -7,6 +7,7 @@ use Doctrine\ORM\Event\LifecycleEventArgs;
 use AppBundle\Entity\Proyecto;
 use AppBundle\Entity\Lote;
 use AppBundle\Entity\LoteCliente;
+use AppBundle\Entity\Cliente;
 
 class AddUserEntity {
     
@@ -21,7 +22,7 @@ class AddUserEntity {
     {        
         $user = $this->tokenStorage->getToken()->getUser();        
         $entity = $args->getEntity();
-        if ($entity instanceof Proyecto || $entity instanceof Lote || $entity instanceof LoteCliente)
+        if ($entity instanceof Proyecto || $entity instanceof Lote || $entity instanceof LoteCliente || $entity instanceof Cliente)
         {
             $entity->setIdUsuario($user);
         }                        
